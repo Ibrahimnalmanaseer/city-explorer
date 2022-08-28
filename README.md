@@ -24,5 +24,5 @@ create (main.js , form.js , data.js) , firstly get the city name from from.js to
 
 
 ## Credit and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+
 Contirbutor : [Mohannad Jaser]("www.githup.com")
