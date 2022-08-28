@@ -1,55 +1,60 @@
-import React from "react";
+// import React from "react";
+// import axios from "axios";
 
 
-class Data extends React.Component {
+// class Data extends React.Component {
  
  
-    constructor(props){
+//     constructor(props){
 
-      super(props)
+//       super(props)
 
-        this.state={
+//         this.state={
 
-          lon:'',
-          lan:''
-        }
+//           lon:'',
+//           lan:''
+//         }
 
       
-      }
+//       }
 
-      // getLocationDetails=()=>{
-      //   const key='pk.c38cb90efb1f614a4d476396e3396b57';
+//         getLocationDetails=async()=>{
+//         const key='pk.c38cb90efb1f614a4d476396e3396b57';
 
-      //   const URL = `https://us1.locationiq.com/v1/search?key=${key}&q=${this.props.location}&format=json`
-      //   let request = axios.get(URL);
+//         const URL = `https://us1.locationiq.com/v1/search?key=${key}&q=${this.props.city}&format=json`
+//         let request = await axios.get(URL);
 
-      //   this.setState({
-      //     lat:request.date[0].lat,
-      //     lan:request.date[0].lan
+//         this.setState({
+//           lat:request.data[0].lat,
+//           lan:request.data[0].lan
 
-      //   })
+          
 
-      // }
+//         })
+
+//       }
 
     
 
 
-     render(){
+//      render(){
   
-      return (
+//       return (
 
-            <div>
+//             <div>
 
-            <p>longitude : {this.state.lon}</p>
-        <p>latitude : {this.state.lat}</p>
+//             <p>longitude : {this.state.lon}</p>
+//             <p>latitude : {this.state.lat}  {console.log(this.state.lat)}</p>
 
-        </div>
 
-        );
+
+//         </div>
+
+//         );
   
   
   
-   }
-}
+//    }
+// }
   
-  export default Data;
+//   export default Data;

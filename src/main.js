@@ -1,8 +1,7 @@
 import React from "react";
 import Entry from './form.js';
-
-const Key='pk.c38cb90efb1f614a4d476396e3396b57'
-const URL = https://us1.locationiq.com/v1/search?key=${key}&q=${cityName}&format=json
+// import Data from "./Data.js";
+const key='pk.c38cb90efb1f614a4d476396e3396b57';
 
 
 class Main extends React.Component{
@@ -16,21 +15,26 @@ class Main extends React.Component{
     this.state={
 
       city:'',
-      latitude:'',
-      longitude:''
+      lat:'',
+      lon:'',
+      
+    
     }
   }
 
-
    
-  getCity=(cityname)=>{
+  getCity=(cityname,latitude,longitude)=>{
 
     this.setState({
       city:cityname,
+      lat:latitude,
+      lon:longitude,
+      
+
 
     })
 
-
+    
   }
   render(){
 
@@ -40,9 +44,11 @@ class Main extends React.Component{
 
 
            <Entry getcity={this.getCity} />
-           <Data location={this.state.city} />
+           <h1>latitude: {this.state.lat}</h1>
+           <h1>longitude: {this.state.lon}</h1>
+           <img src={`https://maps.locationiq.com/v3/staticmap?key=pk.c38cb90efb1f614a4d476396e3396b57&center=${this.state.lat},${this.state.lon}`} />
+          
            
-
         </div>
 
       )

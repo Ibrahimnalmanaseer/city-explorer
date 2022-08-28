@@ -1,24 +1,23 @@
 import React from "react";
-// import Button from 'react-bootstrap/Button';
-// import Form from 'react-bootstrap/Form';
+import axios from "axios";
+
 
 class Entry extends React.Component{
 
 
 
-    getLocation=(event)=>{
+    getLocation=async(event)=>{
 
         event.preventDefault();
-        const cityName=event.target.city.value;
-        this.props.getcity(cityName);
         
+                
+        const key='pk.c38cb90efb1f614a4d476396e3396b57';
+        let request = await axios.get(`https://eu1.locationiq.com/v1/search?key=${key}&q=${event.target.city.value} &format=json`); 
+        this.props.getcity(event.target.city.value,request.data[0].lat,request.data[0].lon);
+        console.log(request)
+        
+            
     }
-
-
-
-
-
-
 
     render(){ return (
 
@@ -31,19 +30,11 @@ class Entry extends React.Component{
           <input type="text" name="city" placeholder='Enter a city'/>
           <button type='submit'>Explore!</button>
         </form>
-
-        /* <h3>Display name : {this.state.display_name}</h3>
-        <p>Lon : {this.state.lon}</p>
-        <p>Lat : {this.state.lat}</p>
-
-        {this.state.mapFlag && <img src={https://maps.locationiq.com/v3/staticmap?key=pk.7aedc85ff3620b0d3b6865ccab5efd25&center=${this.state.lat},${this.state.lon}}></img>}
-        {this.state.errFlag && <h4>Error : sorry something went wrong!</h4>} */
-
-    
-
+   
     )
     }
 
 }
+
 
 export default Entry;
